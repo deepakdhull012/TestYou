@@ -1,0 +1,23 @@
+page-create-post {
+  .post-btn{
+    border: none;
+    background: transparent;
+    box-shadow: none;
+    color: #ccc;
+  }
+  .create-post-title{
+    margin-top: 9px;
+  }
+  .post-content-height{
+    height:70%;
+  }
+  .post-content-height textarea{
+    height:100%;
+  }
+  .create-post-holder .scroll-content{
+    padding-bottom: 0 !important;
+  }
+  .txt-post-content{
+    padding: 5px 0;
+  }
+}

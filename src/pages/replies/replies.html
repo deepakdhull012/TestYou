@@ -1,0 +1,72 @@
+<!--
+  Generated template for the CommentPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+<ion-navbar>
+  <ion-title>Replies</ion-title>
+</ion-navbar>
+  <div class="like-status">
+    <div class="pull-left total-likes" *ngIf ="comment.likes > 0">
+      <ion-icon name="thumbs-up" class="like-btn-blue font-blue"></ion-icon>
+      <span *ngIf = "comment.likedByme">You <span *ngIf = "comment.likes > 1">and {{comment.likes-1}} others</span></span>
+      <span *ngIf = "!comment.likedByme && comment.likes>0">{{comment.likes}} peoples </span>
+      <span>liked this</span>
+    </div>
+    <div class="pull-right">
+      <ion-icon name="thumbs-up" class="like-btn-icon" [ngClass]="{'likedByMe': comment.likedByme}" (click)="like(comment)"></ion-icon>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+
+</ion-header>
+
+
+<ion-content>
+
+  <div class="replies-holder">
+    <div class="reply" *ngFor = "let reply of replies">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-2>
+              <img class="avatar" [src]="reply.replierImage" onError="this.src='assets/imgs/profile-pic.png';"/>
+          </ion-col>
+          <ion-col col-10 class="">
+            <div class="reply-background">
+              <div class="reply-name-holder">{{reply.replierName}}</div>
+              <div class="reply-content">{{reply.content}}</div>
+            </div>
+            <div class="font-grey">
+              <span class="replied-on padding-right-md">{{reply.repliedOn |  smartDate:15}}</span>
+              <span class="like-reply padding-right-md">Like</span>
+              <span class="delete-reply">Delete</span>
+            </div>
+          </ion-col>
+          <div class="clearfix"></div>
+
+        </ion-row>
+      </ion-grid>
+
+    </div>
+  </div>
+
+</ion-content>
+<ion-footer>
+  <ion-grid class="reply-box-holder">
+    <ion-row>
+      <ion-col col-2>
+        <img class="avatar" [src]="userAvatar" onError="this.src='assets/imgs/profile-pic.png';"/>
+      </ion-col>
+      <ion-col col-8>
+        <input type="text" class="reply-box" [(ngModel)]="replyContent">
+      </ion-col>
+      <ion-col col-2>
+        <button ion-button class="post-reply-btn" (click)="presentLoadingDefault(replyContent)">
+          <ion-icon name="paper-plane"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>

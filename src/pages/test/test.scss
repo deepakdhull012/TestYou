@@ -1,0 +1,67 @@
+page-test {
+  .timer{
+    margin: 8px 0 0 0;
+    color:#fff;
+  }
+  .gif_holder{
+    position: absolute;
+    top: 40%;
+    left: 35%;
+  }
+  .gif_holder img{
+    width:100px;
+    height:100px;
+  }
+  .radio-holder{
+    background: transparent;
+    color: #126092;
+  }
+  .radio-holder .item-inner{
+    border-bottom: 1px solid #126092 !important;
+  }
+  .status-bar-container{
+    background-color: #f00;
+    border-radius: 50px;
+    margin-bottom: 10px;
+    position: relative;
+  }
+  .status-data{
+    position: absolute;
+    left:30%;
+    top:5px;
+  }
+  .status{
+    text-align: right;
+    color: white;
+    background: green;
+    height:30px;
+    border-radius: 50px;
+  }
+  ion-slide.swiper-slide {
+    align-items: flex-start;
+}
+ion-slides {
+  height: auto;
+}
+.attempt-info{
+  text-align: left;
+  color: #444;
+}
+.ques-info{
+  text-align: left;
+  color: #444;
+  padding: 5px 0;
+}
+.questionHolder{
+  margin-top: 5px;
+}
+.review-btn{
+  background: transparent;
+  box-shadow: none;
+  font-size:2 rem;
+}
+.submit-test-btn{
+  color:#fff;
+  border-color: #fff;
+}
+}

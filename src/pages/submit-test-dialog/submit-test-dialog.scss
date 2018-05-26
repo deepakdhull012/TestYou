@@ -1,0 +1,46 @@
+page-submit-test-dialog {
+.dialog-holder{
+    width: 80%;
+    margin-left: 10%;
+    height: 55%;
+    top: 17%;
+    border: 2px solid #eee;
+    border-radius: 5px;
+    background: #126092;
+}
+.dialog-title{
+  color: #fff;
+    font-size: 2rem;
+    text-align: left;
+    font-weight: bold;
+
+}
+.dialog-message{
+  color: #fff;
+    padding-top: 5px;
+    font-size: 1.6rem;
+}
+.dialog-table{
+
+}
+.table-row-holder{
+  margin-top: 10px;
+}
+.table-row{
+    padding: 12px 0;
+    font-size: 1.7rem;
+    border-bottom: 1px solid #a0a0a0;
+    color: #fff;
+}
+.table-row.last{
+    border-bottom: none;
+}
+.dialog-btn-holder{
+  margin-top: 10px;
+}
+.dialog-btn-holder button{
+  width: 47%;
+    background: #fff;
+    color: #126092;
+}
+}

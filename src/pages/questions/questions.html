@@ -1,0 +1,42 @@
+<!--
+  Generated template for the QuestionsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Answers</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ng-container *ngFor="let question of questionList;let i = index">
+  <div class="questionHolder" [ngClass]="{'bg-green':question.isCorrect,'bg-red':!question.isCorrect,'bg-unattempted':!question.attempted}">
+    <div class="question-name-holder">
+      <i class="question-index-holder">Q.{{i+1}})</i>
+      <code class="question-name">{{question.questionName}}</code>
+    </div>
+    <div class="option"><i class="static-label-question">A) </i>{{question.optionA}}
+    <img src="/android_asset/www/assets/icon/green_tick.png" class="email_valid_icon" *ngIf="question.correctAnswer.trim()=='A'"/></div>
+    <div class="option"><i class="static-label-question">B) </i>{{question.optionB}}
+      <img src="/android_asset/www/assets/icon/green_tick.png" class="email_valid_icon" *ngIf="question.correctAnswer.trim()=='B'"/>
+    </div>
+    <div class="option"><i class="static-label-question">C) </i>{{question.optionC}}
+      <img src="/android_asset/www/assets/icon/green_tick.png" class="email_valid_icon" *ngIf="question.correctAnswer.trim()=='C'"/>
+    </div>
+    <div class="option"><i class="static-label-question">D) </i>{{question.optionD}}
+      <img src="/android_asset/www/assets/icon/green_tick.png" class="email_valid_icon" *ngIf="question.correctAnswer.trim()=='D'"/>
+    </div>
+    <div class="asked-in"><span class="static-label-question">Candidate Answer: </span>{{question.candidateAnswer}}</div>
+    <div class="asked-in"><span class="static-label-question">Asked In: </span>{{question.year}}</div>
+    <div class="difficulty"><span class="static-label-question">Difficulty: </span>{{question.difficulty}}</div>
+    <div class="explanation"><span class="static-label-question">Explanation: </span>{{question.explanation}}</div>
+
+  </div>
+</ng-container>
+
+</ion-content>

@@ -1,0 +1,36 @@
+page-review {
+  .close-btn{
+    background: transparent;
+    box-shadow: none;
+    font-size:1.9 rem;
+  }
+  .ques-status-holder{
+    text-align: center;
+    margin: 10px 0;
+    borde-bottom:1px solid;
+  }
+  .ques-status{
+    border:1px solid;
+    padding: 10px;
+    width:100%;
+    border-radius: 50%;
+  }
+  .bg-red{
+    background: #f00;
+  }
+  .bg-green{
+    background: #1f1;
+  }
+  .bg-voilet{
+    background: #94f;
+  }
+  .bg-attempted{
+    background: #126092;
+    color: #fff;
+  }
+  .view-answer-btn{
+    background: #126092;
+    box-shadow: none;
+    border: 1px solid;
+  }
+}

@@ -1,0 +1,54 @@
+page-news-feed {
+  .new-post-input{
+    border: 1px solid;
+    border-radius: 25px;
+    width: 100%;
+    padding: 10px 20px;
+  }
+  .avatar{
+    border-radius:50%;
+    height:40px;
+    width:100%;
+  }
+  .post-holder{
+    margin-bottom: 10px;
+  }
+  .thumbs-up-icon{
+    color: #126092;
+  }
+  .poster-name{
+    color:#000;
+    font-weight: bold;
+  }
+  .posted-on{
+    color: #9f9f9f;
+    padding-top: 1px;
+  }
+  .post-content{
+    color: #333;
+    padding: 0 10px;
+  }
+  .likes-comments-holder{
+    padding: 7px 12px;
+  }
+  .like-btn,.comment-btn,.share-btn{
+    width: 33.33%;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    text-align: center;
+    color: #333;
+    text-transform: capitalize;
+    margin: 0;
+  }
+  .like-btn-icon,.comment-btn-icon,.share-btn-icon{
+    color:#999;
+    padding-right: 6px;
+  }
+  .likedByMe{
+    color: #126092;
+  }
+  .buttons-holder{
+    border-top: 1px outset;
+  }
+}

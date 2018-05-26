@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-navbar hideBackButton>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <span class="font-white font-medium">Exams</span>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <!--<i class="margin-bottom-sm" *ngIf="examList?.length == 0">No Exams added yet</i>
+    <div class="exam-subject-holder" *ngFor="let exam of examList">
+      <ion-card class="exam-card">
+          <img src="{{exam.examImage}}"/>
+          <span class="exam-name-holder">{{exam.examName}}</span>
+          <button class="subject-toggle-btn" ion-button outline (click)="toggleSubjects(exam)">
+            View Subjects&nbsp;
+            <ion-icon name="arrow-down" *ngIf="!exam.isSubjectVisible"></ion-icon>
+            <ion-icon name="arrow-up" *ngIf="exam.isSubjectVisible"></ion-icon>
+          </button>
+    </ion-card>
+
+        <ul class="subject-list">
+          <ng-container *ngIf="exam.isSubjectVisible">
+          <ng-container *ngFor="let subject of subjectList">
+          <li *ngIf="subject.examId==exam._id" >
+            <ion-row>
+              <ion-col col-12 class="font-medium subjectNameHolder">{{subject.subjectName}}</ion-col>
+              <ion-col col-6 class="subject-test-btn-holder"><button class="subject-tst-btn" ion-button outline (click)="gotoTestListPage(subject)">Take Tests</button></ion-col>
+              <ion-col col-6 class=" right">
+                <button class="subject-tst-btn" ion-button outline (click)="goToChapters(subject)">View Chapters</button>
+              </ion-col>
+            </ion-row>
+
+          </li>
+            </ng-container>
+              </ng-container>
+        </ul>
+    </div>-->
+    <ul class="home-menu">
+      <li>
+        <ion-card class="menu-card" (click)="goToSubjectpage()">
+          <img src="https://firebasestorage.googleapis.com/v0/b/testyou-1a6bc.appspot.com/o/mcq.jpg?alt=media&token=82b37528-71cf-4c19-b9ee-ba7660149a05" onError="this.src='assets/icon/loading.gif'"/>
+          <div class="overlay">Topic Wise Questions</div>
+      </ion-card>
+    </li>
+    <li>
+      <ion-card class="menu-card" (click)="goToVideos()">
+        <img src="https://firebasestorage.googleapis.com/v0/b/testyou-1a6bc.appspot.com/o/video-tutorial.png?alt=media&token=84ec7798-f0c3-4e6d-9d08-cac030c710ca" onError="this.src='assets/icon/loading.gif'"/>
+        <div class="overlay">Topic Wise Video Tutorials</div>
+      </ion-card>
+    </li>
+    <li>
+      <ion-card class="menu-card" (click)="gotoMockTestPage()">
+        <img src="https://firebasestorage.googleapis.com/v0/b/testyou-1a6bc.appspot.com/o/mock-test.png?alt=media&token=8f7e0d8a-6558-4da4-9ed3-8054b0dbd900" onError="this.src='assets/icon/loading.gif'"/>
+        <div class="overlay">Mock Tests</div>
+      </ion-card>
+    </li>
+    <li>
+      <ion-card class="menu-card" (click)="gotoPreviousYearTestPage()">
+        <img src="https://firebasestorage.googleapis.com/v0/b/testyou-1a6bc.appspot.com/o/previous-year-paper.jpg?alt=media&token=ac06ed31-8d3d-4f3a-91be-b3db9ed69cdf" onError="this.src='assets/icon/loading.gif'"/>
+        <div class="overlay">Previous Year Question Papers</div>
+      </ion-card>
+    </li>
+    <li>
+      <ion-card class="menu-card">
+        <img src="https://firebasestorage.googleapis.com/v0/b/testyou-1a6bc.appspot.com/o/current-affairs.jpg?alt=media&token=94ad8fc8-9c7e-4168-ac11-42576177f138" onError="this.src='assets/icon/loading.gif'"/>
+        <div class="overlay">Current Affairs</div>
+      </ion-card>
+    </li>
+    <li>
+      <ion-card class="menu-card">
+        <img src="https://firebasestorage.googleapis.com/v0/b/testyou-1a6bc.appspot.com/o/quiz-today.jpg?alt=media&token=8f37b0f6-cd5e-4f8c-abb8-5c0579a897b7" onError="this.src='assets/icon/loading.gif'"/>
+        <div class="overlay">Daily Quiz</div>
+      </ion-card>
+    </li>
+
+    </ul>
+</ion-content>

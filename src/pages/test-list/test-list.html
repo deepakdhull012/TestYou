@@ -1,0 +1,42 @@
+<!--
+  Generated template for the TestListPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>TestList</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-card *ngFor="let test of testList | orderBy : 'status'" >
+  <ion-card-content>
+    <div class="pull-left">{{test.testName}}</div>
+    <div class="pull-right">
+      <span *ngIf="!test.questionsLoaded">
+        <ion-spinner name="bubbles"></ion-spinner>
+      </span>
+      <span *ngIf="test.questionsLoaded">{{test.questions.length}} Questions</span>
+    </div>
+    <div class="clearfix"></div>
+    <div class="pull-left">
+    <div *ngIf="test.status == 'In Progress'">
+      <button ion-button class="bg-blue test-btn" (click)="resume(test)">Resume</button>
+    </div>
+    <div *ngIf="test.status == 'Untouched'">
+      <button ion-button class="bg-blue" (click)="attempt(test)">Attempt Now</button>
+    </div>
+  </div>
+  <div class="pull-right" >
+    <progress *ngIf="test.questions && test.noOfQuesAttempted/test.questions.length<1" max="100" value="{{(test.noOfQuesAttempted/test.questions.length)*100}}"></progress>
+    </div>
+    <div class="clearfix"></div>
+
+  </ion-card-content>
+</ion-card>
+</ion-content>

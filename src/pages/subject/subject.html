@@ -1,0 +1,49 @@
+<!--
+  Generated template for the SubjectPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Subjects</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <i class="margin-bottom-sm" *ngIf="examList?.length == 0 && subjectsLoaded == true ">No Subjects found</i>
+  <div class="subject-chapter-holder" *ngFor="let subject of subjectList">
+    <ion-card class="subject-card">
+        <img src="{{subject.subjectImg}}"/>
+        <div class="overlay">
+        <button class="subject-test-btn" ion-button outline (click)="gotoSubjectTestMode(subject)">Take {{subject.subjectName}} Test</button>
+        <button class="chapter-toggle-btn" ion-button outline (click)="toggleChapters(subject)">
+          View Chapters&nbsp;
+          <ion-icon name="arrow-down" *ngIf="!subject.isChapterVisible"></ion-icon>
+          <ion-icon name="arrow-up" *ngIf="subject.isChapterVisible"></ion-icon>
+        </button>
+        <div class="clearfix"></div>
+      </div>
+  </ion-card>
+  <ul class="chapter-list">
+    <ng-container *ngIf="subject.isChapterVisible">
+    <ng-container *ngFor="let chapter of chapterList">
+    <li *ngIf="chapter.subjectId==subject._id" >
+      <ion-row>
+        <ion-col col-12 class="font-medium chapterNameHolder">{{chapter.chapterName}}</ion-col>
+        <ion-col col-6 class="chapter-test-btn-holder">
+          <button class="chapter-tst-btn" ion-button outline (click)="gotoChapterTestMode(chapter)">Take Test</button></ion-col>
+        <ion-col col-6 class="right">
+          <button class="topic-btn" ion-button outline (click)="goToTopics(chapter)">View Topics</button>
+        </ion-col>
+      </ion-row>
+
+    </li>
+      </ng-container>
+        </ng-container>
+  </ul>
+  </div>
+</ion-content>

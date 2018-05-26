@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      <span class="pull-left chatter-name-holder">{{other.userName}} </span>
+
+          <ion-toggle class="pull-left" [(ngModel)]="audioModeOn"></ion-toggle>
+          <div class="pull-left sound-label">Sound</div>
+      <div class="online-dot" [ngClass]="{'red': !online, 'green': online}"></div>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content #content class="chatbg">
+  <div *ngFor="let message of messages" class="chat-holder">
+    <div class="message" [ngClass]="{'my_message': message.isMine, 'other_message': !message.isMine}">
+      <span class="tail-container"></span>
+        <span>{{ message.messageContent }}</span>
+        <div class="time">
+          <ion-icon name="time" *ngIf="message.isMine && !message.sent"></ion-icon>
+          <ion-icon name="checkmark" *ngIf="message.isMine && message.sent && !message.delivered"></ion-icon>
+          <ion-icon name="done-all" class="deliver-check" *ngIf="message.isMine && message.delivered"></ion-icon>
+          {{message.messageDate | date :'shortTime' }}</div>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+  <div *ngIf="isTyping" class="message other_message">
+    <span class="tail-container"></span>
+    <span><img src="assets/imgs/typing.gif" class="typing-img">{{typingText}}</span>
+    <div class="time">{{currentTime | date:'hh:MM'}}</div>
+  </div>
+
+</ion-content>
+
+<ion-footer>
+    <ion-row class="message_row">
+      <ion-col col-10>
+        <ion-item class="text-msg-holder">
+            <ion-input id="msgHolder" type="text" placeholder="Type here" [(ngModel)]="msgText" (keyup)="onChange($event)"></ion-input>
+
+        </ion-item>
+      </ion-col>
+      <ion-col col-2>
+      <!--  <button ion-button clear class="send-btn-holder" (click)="sendMessage(msgText)" [disabled]="msgText == ''">
+        <ion-icon name="md-send"></ion-icon>
+      </button>-->
+
+      <button ion-button clear  class="send-btn-holder"  (mousedown)="$event.preventDefault();" [disabled]="msgText.trim() == '' && !isDevice">
+        <ion-icon name="md-send" *ngIf="!msgText.trim() == '' || !isDevice" (click)="sendMessage(msgText)"></ion-icon>
+        <ion-icon name="mic-off" *ngIf="msgText.trim() == '' && isDevice" (click)="iniateVoiceProcess()"></ion-icon>
+      </button>
+
+      </ion-col>
+    </ion-row>
+</ion-footer>

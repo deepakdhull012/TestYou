@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar>
+    <span class="pull-left font-white clear-filter" (click)="clearFilter()">Clear Filters</span>
+    <button ion-button class="pull-right close-btn">
+      <ion-icon name="close" (click)="dismissFilter()"></ion-icon>
+    </button>
+    <button menuClose ion-button class="pull-right apply-filter-btn" (click)="applyFilter()">Apply</button>
+
+    <span class="clearfix"></span>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+      <ion-item class="difficulty-filter padding-top-md">
+        <ion-label class="difficulty-label">Year</ion-label>
+        <ion-select class="difficulty-select" [(ngModel)]="year" multiple="true">
+          <ion-option value=0>Never Asked Till Now</ion-option>
+          <ion-option value=2010>Before 2011</ion-option>
+          <ion-option value=2011>2011</ion-option>
+          <ion-option value=2012>2012</ion-option>
+          <ion-option value=2013>2013</ion-option>
+          <ion-option value=2014>2014</ion-option>
+          <ion-option value=2015>2015</ion-option>
+          <ion-option value=2016>2016</ion-option>
+          <ion-option value=2017>2017</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <div class="chapter-holder" *ngFor="let chapter of chapters">
+
+          <div class="pull-left" style="width:80%;">
+            <ion-label class="chapter-toggle font-medium" (click)="toggleTopic(chapter)">
+              <span class="pull-left chapter-name-holder-ham">{{chapter.chapterName}}</span>
+              <ion-icon class="pull-right" name="ios-arrow-down" *ngIf="!chapter.isTopicVisible"></ion-icon>
+              <ion-icon class="pull-right" name="ios-arrow-up"  *ngIf="chapter.isTopicVisible"></ion-icon>
+            </ion-label>
+
+          </div>
+          <ion-checkbox class="pull-right chapter-toggle-cb" [(ngModel)]="chapter.isChecked"  (click)="chapterCbChanged(chapter)"></ion-checkbox>
+          <div class="clearfix"></div>
+        <ul class="topic-list-ham">
+          <ng-container *ngIf="chapter.isTopicVisible">
+          <ng-container *ngFor="let topic of topics">
+          <li *ngIf="topic.chapterId==chapter._id" >
+            <ion-item class="topic-cb-holder">
+              <ion-label class="pull-left padding-left-md">{{topic.topicName}}</ion-label>
+              <ion-checkbox class="item-checkbox-right padding-right-md" item-right [(ngModel)]="topic.isChecked" (ionChange)="topicCbChanged(topic,chapter)"></ion-checkbox>
+            </ion-item>
+          </li>
+        </ng-container>
+          </ng-container>
+        </ul>
+  </div>
+</ion-content>

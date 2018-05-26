@@ -1,0 +1,66 @@
+page-login {
+  .input_holder{
+    position:relative;
+    border-bottom: 1px solid #126092;
+  }
+  .input_holder .left-icon{
+    position: absolute;
+  }
+  .email-box{
+    width:calc(100% - 30px);
+  }
+  .password-box{
+    width:calc(100% - 60px);
+  }
+  .email_valid_icon{
+    position: absolute;
+    width: 15px;
+    top: 7px;
+    height: 15px;
+    right: 10px;
+  }
+  .logo-img{
+    height: auto;
+    width: auto;
+    margin-bottom: 30px;
+    margin-left: 0%;
+    margin-top: 10%;
+  }
+  .facebook-login{
+    background: #3b5998;
+    color: #fff;
+    border-color: #3b5998;
+    text-transform: capitalize;
+    padding: 20px 10px;
+    font-size: 2rem;
+  }
+  .gmail-login{
+    background: #d34836;
+    color: #fff;
+    border-color: #d34836;
+    text-transform: capitalize;
+    padding: 20px 10px;
+    font-size: 2rem;
+  }
+  .register-holder{
+    text-align: center;
+    margin: 0;
+    width: 88%;
+    padding-top: 10px;
+  }
+  .register-link{
+        font-size: 1.6rem;
+  }
+  .sign-up{
+    text-decoration: underline;
+  }
+  .keep-me-holder.lpd0 .keep-me-login-box{
+    margin-right: 10px;
+  }
+  .keep-me-holder > .item-inner{
+    border-bottom:none !important;
+  }
+  .keep-me-login-box .checkbox-icon{
+    border:1px solid #126092;
+  }
+}

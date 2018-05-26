@@ -1,0 +1,52 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Sign up</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <h1>Welcome To Planner</h1>
+  <ion-grid>
+  <ion-row class = "list">
+    <label ion-col col-12 col-sm-6 class = "item item-input input_holder">
+      <ion-icon name="contact" class="left-icon"></ion-icon>
+       <input [(ngModel)]="username" type = "text" placeholder = "Name.." value="" (ngModelChange)="isValidName(username)"/>
+       <img src="/android_asset/www/assets/icon/green_tick.png" class="email_valid_icon" *ngIf="validName && nameTypeStart"/>
+       <img src="/android_asset/www/assets/icon/red_cross.png" class="email_valid_icon" *ngIf="!validName && nameTypeStart"/>
+    </label>
+     <label ion-col col-12 col-sm-6 class = "item item-input input_holder">
+       <ion-icon name="person" class="left-icon"></ion-icon>
+        <input [(ngModel)]="email" type = "email" placeholder = "Email.." value="" (ngModelChange)="isValidEmail(email)"/>
+        <img src="/android_asset/www/assets/icon/green_tick.png" class="email_valid_icon" *ngIf="validEmail && emailTypeStart"/>
+        <img src="/android_asset/www/assets/icon/red_cross.png" class="email_valid_icon" *ngIf="!validEmail && emailTypeStart"/>
+     </label>
+     <label ion-col col-12 col-sm-6 class = "item item-input input_holder">
+       <ion-icon name="call"  class="left-icon"></ion-icon>
+        <input [(ngModel)]="mobile" type = "tel" maxlength="10" placeholder = "Mobile.." value="" (ngModelChange)="isvalidMobile(mobile)"/>
+        <img src="/android_asset/www/assets/icon/green_tick.png" class="email_valid_icon" *ngIf="validMobile && mobileTypeStart"/>
+        <img src="/android_asset/www/assets/icon/red_cross.png" class="email_valid_icon" *ngIf="!validMobile && mobileTypeStart"/>
+     </label>
+
+
+     <label ion-col col-12 col-sm-6 class = "item item-input input_holder">
+         <ion-icon name="lock" class="left-icon"></ion-icon>
+        <input [(ngModel)]="password" type = "password" value="" placeholder = "Password..(min 6 char)" (ngModelChange)="isValidPassword(password)"/>
+        <img src="/android_asset/www/assets/icon/green_tick.png" class="email_valid_icon" *ngIf="validPassword && passwordTypeStart"/>
+        <img src="/android_asset/www/assets/icon/red_cross.png" class="email_valid_icon" *ngIf="!validPassword && passwordTypeStart"/>
+     </label>
+
+     <label ion-col col-12 col-sm-6 class = "item item-input input_holder">
+         <ion-icon name="lock" class="left-icon"></ion-icon>
+        <input [(ngModel)]="confirmPassword" type = "password" value="" placeholder = "Confirm Password.." (ngModelChange)="isValidConfirmPassword(confirmPassword)"/>
+        <img src="/android_asset/www/assets/icon/green_tick.png" class="email_valid_icon" *ngIf="validconfirmPassword && confirmPasswordTypeStart"/>
+        <img src="/android_asset/www/assets/icon/red_cross.png" class="email_valid_icon" *ngIf="!validconfirmPassword && confirmPasswordTypeStart"/>
+     </label>
+     <div class="error red" *ngIf="!dataValid">Please resolve errors to proceed furthur..</div>
+   </ion-row>
+
+   <button ion-button block outline (click)="presentLoadingDefault(username,email,mobile,password,confirmPassword)">Sign Up</button>
+ </ion-grid>
+</ion-content>

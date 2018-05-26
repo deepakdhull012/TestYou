@@ -1,0 +1,19 @@
+page-topics {
+  .topicHolder{
+    padding: 15px 0;
+    text-align: center;
+    border-bottom: 1px solid #126092;
+    margin-bottom: 5px;
+    width: 100%;
+    background: transparent;
+    color: #126092;
+    font-size: 2rem;
+  }
+  .delete-topic-btn{
+    position: fixed;
+    bottom: 5px;
+    left: 2%;
+    right: 2%;
+    width: 96%;
+  }
+}

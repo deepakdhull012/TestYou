@@ -1,0 +1,72 @@
+<!--
+  Generated template for the CommentPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+<ion-navbar>
+  <ion-title>Comments</ion-title>
+</ion-navbar>
+  <div class="like-status">
+    <div class="pull-left total-likes" *ngIf ="post.likes > 0">
+      <ion-icon name="thumbs-up" class="like-btn-blue font-blue"></ion-icon>
+      <span *ngIf = "post.likedByme">You <span *ngIf = "post.likes > 1">and {{post.likes-1}} others</span></span>
+      <span *ngIf = "!post.likedByme && post.likes>0">{{post.likes}} peoples </span>
+      <span>liked this</span>
+    </div>
+    <div class="pull-right">
+      <ion-icon name="thumbs-up" class="like-btn-icon" [ngClass]="{'likedByMe': post.likedByme}" (click)="like(post)"></ion-icon>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+
+</ion-header>
+
+
+<ion-content>
+
+  <div class="comments-holder">
+    <div class="comment" *ngFor = "let comment of comments">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-2>
+              <img class="avatar" [src]="comment.commenterImage" onError="this.src='assets/imgs/profile-pic.png';"/>
+          </ion-col>
+          <ion-col col-10 class="">
+            <div class="comment-background">
+              <div class="commenter-name-holder">{{comment.commenterName}}</div>
+              <div class="comment-content">{{comment.content}}</div>
+            </div>
+            <div class="font-grey">
+              <span class="commented-on padding-right-md">{{comment.commentedOn |  smartDate:15}}</span>
+              <span class="like-comment padding-right-md">Like</span>
+              <span class="reply-comment">Reply</span>
+            </div>
+          </ion-col>
+          <div class="clearfix"></div>
+
+        </ion-row>
+      </ion-grid>
+
+    </div>
+  </div>
+
+</ion-content>
+<ion-footer>
+  <ion-grid class="comment-box-holder">
+    <ion-row>
+      <ion-col col-2>
+        <img class="avatar" [src]="userAvatar" onError="this.src='assets/imgs/profile-pic.png';"/>
+      </ion-col>
+      <ion-col col-8>
+        <input type="text" class="comment-box" [(ngModel)]="commentContent">
+      </ion-col>
+      <ion-col col-2>
+        <button ion-button class="post-comment-btn" (click)="presentLoadingDefault(commentContent)">
+          <ion-icon name="paper-plane"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>

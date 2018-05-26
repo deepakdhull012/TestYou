@@ -1,0 +1,61 @@
+<ion-content padding>
+  <ion-grid>
+    <ion-row class="list">
+      <ion-col col-12 col-sm>
+        <img src="assets/imgs/logo2.png" class="logo-img">
+      </ion-col>
+       <ion-col col-12 col-sm>
+         <label class = "item item-input input_holder">
+
+           <ion-icon name="person" class="left-icon"></ion-icon>
+          <input [(ngModel)]="email" class="email-box" type = "email" placeholder = "Email.." value="deepakdhull012@gmail.com" (ngModelChange)="isValidEmail(email)"/>
+
+          <img src="/android_asset/www/assets/icon/green_tick.png" class="email_valid_icon" *ngIf="validEmail && emailTypeStart"/>
+          <img src="/android_asset/www/assets/icon/red_cross.png" class="email_valid_icon" *ngIf="!validEmail && emailTypeStart"/>
+        </label>
+      </ion-col>
+
+      <ion-col col-12 col-sm>
+        <label class = "item item-input input_holder">
+          <ion-icon name="lock" class="left-icon"></ion-icon>
+          <input [(ngModel)]="password" class="password-box" type = "password" placeholder = "Password.." id="password2" value="123456" #password2/>
+          <ion-icon name="ios-eye" (mousedown)="showPassword()"></ion-icon>
+
+        </label>
+      </ion-col>
+  </ion-row>
+
+
+  <ion-row>
+    <ion-col col-12 col-sm>
+      <button ion-button block outline (click)="presentLoadingDefault(email,password)">Login</button>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col col-12 col-sm>
+  <ion-item class="lpd0 keep-me-holder">
+    <ion-label class="font-blue">Keep me logged in</ion-label>
+    <ion-checkbox class="keep-me-login-box" [(ngModel)]="keepMeLogin"></ion-checkbox>
+  </ion-item>
+</ion-col>
+</ion-row>
+    <div class="margin-bottom-md" ion-row>
+      <a ion-col class="center">Forgot Password?</a>
+    </div>
+    <ion-row>
+    <ion-col col-12 col-sm>
+      <button ion-button block outline class="facebook-login" (click)="loginWithFB()"><ion-icon class="padding-right-md" name="logo-facebook"></ion-icon> Login With Facebook</button>
+    </ion-col>
+    <ion-col col-12 col-sm>
+      <button ion-button block outline class="gmail-login" (click)="loginWithGmail()"><ion-icon class="padding-right-md" name="logo-googleplus"></ion-icon> Login With Gmail</button>
+    </ion-col>
+    <ion-col col-12 col-sm class="register-holder">
+      <div class="register-link">Don't have an account?<i class="sign-up" (click)="goToSignUp()">Sign up</i></div>
+    </ion-col>
+
+
+
+
+  </ion-row>
+</ion-grid>
+</ion-content>

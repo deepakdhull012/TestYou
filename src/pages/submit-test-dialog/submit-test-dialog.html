@@ -1,0 +1,34 @@
+<ion-content padding class="dialog-holder">
+  <div class="">
+    <div class="dialog-title">Are you sure?</div>
+    <div class="dialog-message">After submitting the test you wont be able to re-attempt.</div>
+    <div class="dialog-table">
+      <div class="table-row-holder">
+        <div class="table-row">
+        <div class="pull-left">Time Left:</div>
+        <div class="pull-right">{{timeLeft}}</div>
+        <div class="clearfix"></div>
+      </div>
+      <div class="table-row">
+        <div class="pull-left">Attempted:</div>
+        <div class="pull-right">{{attemptedQuestions}}</div>
+        <div class="clearfix"></div>
+      </div>
+      <div class="table-row">
+        <div class="pull-left">Unattempted:</div>
+        <div class="pull-right">{{unAttemptedQuestions}}</div>
+        <div class="clearfix"></div>
+      </div>
+      <div class="table-row last">
+        <div class="pull-left">Marked:</div>
+        <div class="pull-right">{{questionsToReview}}</div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+    <div class="dialog-btn-holder">
+      <button ion-button (click)="submit(true)" class="bg-blue">Yes,Submit</button>
+      <button ion-button (click)="submit(false)" class="bg-blue">Cancel</button>
+    </div>
+  </div>
+</ion-content>

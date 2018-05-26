@@ -1,0 +1,34 @@
+<!--
+  Generated template for the ReviewPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+
+    <button ion-button class="pull-right close-btn">
+      <ion-icon name="close" (click)="dismissReview()"></ion-icon>
+    </button>
+    <button ion-button class="pull-left view-answer-btn" (click)="viewAnswers()">
+      View Answers
+    </button>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-grid>
+  <ion-row>
+    <ion-col col-2 *ngFor="let question of questionList;let i = index" class="ques-status-holder">
+      <div class="ques-status" [ngClass]="{'bg-green':question.candidateAnswer && (question.candidateAnswer == question.correctAnswer) && !testMode, 'bg-red':question.candidateAnswer && !(question.candidateAnswer == question.correctAnswer) && !testMode, 'bg-voilet':question.toBeReviewed, 'bg-attempted':question.candidateAnswer && testMode}" (click)="dismissReviewWithData(question,i)">{{i+1}}</div>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+</ion-content>
+<ion-footer>
+  <button ion-button class="bg-blue full-width">Submit</button>
+</ion-footer>

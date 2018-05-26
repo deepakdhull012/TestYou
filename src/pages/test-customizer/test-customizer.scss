@@ -1,0 +1,56 @@
+page-test-customizer {
+  .toggle-label{
+    float: left;
+    margin-left: 1px;
+    display: inline-block;
+    width: 33%;
+    padding: 0;
+    text-align: center;
+    background: transparent;
+    color: #126092;
+  }
+  .toggle-btn{
+    float: left;
+    margin-left: 1px;
+    display: inline-block;
+    width: 33%;
+    background: transparent;
+  }
+  .toggle-label .item-inner{
+    padding: 0 !important;
+    border: none !important;
+    text-align: center;
+  }
+  .toggle-btn .item-inner{
+    padding: 0 !important;
+    border: none !important;
+    text-align: center;
+  }
+  .toggle-btn .input-wrapper{
+    display: none;
+  }
+.difficulty-filter{
+  background: transparent;
+    padding-left: 0;
+    color: #126092;
+}
+.select-md .select-icon .select-icon-inner{
+  color:#126092;
+}
+.item-select .label-md.difficulty-label{
+  color:#126092;
+}
+.difficulty-select{
+  max-width: 55%;
+}
+.difficulty-filter.item-block .item-inner{
+  border-color: #126092;
+}
+.question-attempt-holder input{
+  border: 1px solid;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+    padding: 5px 10px;
+}
+}

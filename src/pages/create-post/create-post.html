@@ -1,0 +1,28 @@
+<!--
+  Generated template for the CreatePostPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title class="pull-left create-post-title">CreatePost</ion-title>
+    <button class="post-btn pull-right" ion-button (click)="presentLoadingDefault(postContent)">Post</button>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="create-post-holder">
+  <ion-item class="post-content-height">
+    <ion-textarea placeholder="Post content here..." [(ngModel)]="postContent" class="txt-post-content"></ion-textarea>
+  </ion-item>
+<ion-item>
+<ion-select [(ngModel)]="selectedExam">
+  <ion-option *ngFor="let exam of examList" [value]="exam">{{exam.examName}}</ion-option>
+</ion-select>
+</ion-item>
+
+
+</ion-content>

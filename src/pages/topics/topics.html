@@ -1,0 +1,13 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{chapter.chapterName}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <i class="margin-bottom-sm" *ngIf="topicList?.length == 0">No Topic added yet</i>
+  <button class="topicHolder" *ngFor="let topic of topicList" (click)="goToQuestions(topic)">
+      {{topic.topicName}}
+  </button>
+</ion-content>

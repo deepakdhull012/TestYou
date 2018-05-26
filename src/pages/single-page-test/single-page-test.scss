@@ -1,0 +1,59 @@
+page-single-page-test {
+  .gif_holder{
+    position: absolute;
+    top: 40%;
+    left: 35%;
+  }
+  .gif_holder img{
+    width:100px;
+    height:100px;
+  }
+  .radio-holder{
+    background: transparent;
+    color: #126092;
+  }
+  .radio-holder .item-inner{
+    border-bottom: 1px solid #126092 !important;
+  }
+  .status-bar-container{
+    background-color: #f00;
+    border-radius: 50px;
+    margin-bottom: 10px;
+    position: relative;
+  }
+  .status-data{
+    position: absolute;
+    left:30%;
+    top:5px;
+  }
+  .status{
+    text-align: right;
+    color: white;
+    background: green;
+    height:30px;
+    border-radius: 50px;
+  }
+  .submit-btn{
+    background: transparent;
+    box-shadow: none;
+    float: right;
+    border: 1px solid;
+  }
+  .review-btn{
+    background: transparent;
+    box-shadow: none;
+    font-size:2 rem;
+  }
+  .status-data{
+    color:#fff;
+  }
+  .question-name-holder{
+    width:90%;
+  }
+  .star-icon{
+    font-size: 2rem;
+  }
+  .review-icon{
+    font-size: 1.5rem;
+  }
+}

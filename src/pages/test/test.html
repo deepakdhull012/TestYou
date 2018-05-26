@@ -1,0 +1,100 @@
+<!--
+  Generated template for the TestPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar #navbar>
+    <ion-title>
+      <h2 class="pull-left timer" >{{timeLeft}}</h2>
+
+      <button class="pull-right submit-test-btn" outline ion-button (click)="submitDialoge()">Submit Test</button>
+      <button ion-button class="review-btn pull-right bg-blue">
+        <ion-icon name="keypad" class="review-icon" (click)="goToReview()"></ion-icon>
+      </button>
+    </ion-title>
+
+
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <i class="margin-bottom-sm" *ngIf="questionList?.length == 0">No Question added yet</i>
+
+
+  <ion-slides #slides>
+  <ion-slide *ngFor="let question of questionList | slice:0:attemptedTest.limit;let i = index">
+    <!--<div class="status-bar-container">
+      <div class="status-data">{{ question.noOfTimesCorrectlyAttempted}} / {{question.noOfTimesAttempted}}</div>
+      <div class="status" [style.width.%]="(question.noOfTimesCorrectlyAttempted/question.noOfTimesAttempted)*100"></div>
+    </div>-->
+    <div class="attempt-info" *ngIf="question.noOfTimesAttempted>0">{{(question.noOfTimesCorrectlyAttempted/question.noOfTimesAttempted) | percent}} people attempted this correctly</div>
+    <div class="attempt-info" *ngIf="question.noOfTimesAttempted==0">No One has attempted this yet..</div>
+
+
+    <div class="ques-info pull-left"><span>{{question.year}} / </span>
+      <span *ngIf="question.difficulty">{{question.difficulty}}</span>
+      <span *ngIf="!question.difficulty">Moderate</span>
+      </div>
+      <div class="pull-right review-star">
+        <ion-icon class="star-icon" name="ios-star-outline" (click)="markForReview(question,true)" *ngIf="!question.toBeReviewed"></ion-icon>
+        <ion-icon class="star-icon" name="star" (click)="markForReview(question,false)" *ngIf="question.toBeReviewed"></ion-icon>
+      </div>
+      <div class="clearfix"></div>
+    <div class="questionHolder">
+      <div class="question-name-holder">
+        <i class="question-index-holder">Q.{{i+1}} / {{limit}} )</i>
+        <code class="question-name">{{question.questionName}}</code>
+      </div>
+      <ion-col col-12 col-sm>
+ <ion-list radio-group [(ngModel)]="question.candidateAnswer" class="padding-bottom-zero margin-bottom-zero">
+  <ion-item class="radio-holder item item-text-wrap" text-wrap>
+    <ion-label>{{question.optionA}}</ion-label>
+    <ion-radio value="A" [disabled]="question.attempted || optionsDisabled" [checked]=false></ion-radio>
+  </ion-item>
+  <ion-item class="radio-holder item item-text-wrap" text-wrap>
+    <ion-label>{{question.optionB}}</ion-label>
+    <ion-radio value="B" [disabled]="question.attempted || optionsDisabled" [checked]=false></ion-radio>
+  </ion-item>
+  <ion-item class="radio-holder item item-text-wrap" text-wrap>
+    <ion-label>{{question.optionC}}</ion-label>
+    <ion-radio value="C" [disabled]="question.attempted || optionsDisabled" [checked]=false></ion-radio>
+  </ion-item>
+  <ion-item class="radio-holder item item-text-wrap padding-bottom-zero margin-bottom-zero" text-wrap>
+    <ion-label>{{question.optionD}}</ion-label>
+    <ion-radio value="D" [disabled]="question.attempted || optionsDisabled" [checked]=false></ion-radio>
+  </ion-item>
+</ion-list>
+</ion-col>
+<div class="gif_holder" *ngIf="displayCorrectImage">
+  <img src="/android_asset/www/assets/icon/correct.gif">
+</div>
+<div class="gif_holder" *ngIf="displayWrongImage">
+  <img src="/android_asset/www/assets/icon/wrong.gif">
+</div>
+<ion-row>
+  <ion-col col-6>
+    <button ion-button class="full-width bg-blue" (click)="skip()" [disabled]="onlyNextButtonAvailable || allButtonsDisable">Skip</button>
+  </ion-col>
+  <ion-col col-6>
+    <button ion-button class="full-width bg-blue" (click)="selected(question,i)" [disabled]="onlyNextButtonAvailable || allButtonsDisable">Submit</button>
+  </ion-col>
+  <ion-col col-6 *ngIf="!testMode">
+    <button ion-button class="full-width bg-blue" (click)="showAnswerWithExplanation()" [disabled]="onlyNextButtonAvailable || allButtonsDisable">View Answer</button>
+  </ion-col>
+  <ion-col col-6 *ngIf="!testMode && onlyNextButtonAvailable">
+    <button ion-button class="full-width bg-blue" (click)="skip()">Next</button>
+  </ion-col>
+</ion-row>
+  <div class="correct-answer-div" *ngIf="displayCorrectAnswer">Correct Answer : {{question.correctAnswer}}</div>
+  <div class="explanation" *ngIf="displayExplanation"><span class="static-label-question">Explanation: </span>{{question.explanation}}</div>
+
+    </div>
+  </ion-slide>
+</ion-slides>
+</ion-content>

@@ -1,0 +1,73 @@
+page-subject {
+  .subject-chapter-holder{
+
+  }
+  .subject-card{
+    margin:0;
+    width:100%;
+    background: #f9f9f9;
+    position: relative;
+    margin-bottom: 10px;
+  }
+  .subject-card img{
+    height: 180px;
+  }
+
+  .chapter-toggle-btn{
+    border-radius: 40px;
+    color:#fff;
+    border-color: #fff;
+    font-family: fantasy;
+    font-size: 1.5rem;
+    float: right;
+  }
+  .subject-test-btn{
+
+    border-radius: 40px;
+    color:#fff;
+    border-color: #fff;
+    font-family: fantasy;
+    font-size: 1.5rem;
+    float: left;
+  }
+  .overlay{
+    bottom: 0;
+    width: 100%;
+    background: rgb(22,55,83);
+    padding: 10px 5px;
+    font-size: 2rem;
+    color: #fff;
+  }
+  .chapter-list{
+    list-style: none;
+    padding: 0;
+    margin:0;
+  }
+  .chapter-list li{
+    background: rgba(22, 55, 83, 0.8588235294117647);
+    color:#fff;
+    margin-bottom: 10px;
+    margin-top: 2px;
+    padding: 5px;
+  }
+  .chapterNameHolder{
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #fff;
+  }
+  .chapter-test-btn-holder{
+    border-right: 1px solid #fff;
+  }
+  .chapter-tst-btn{
+    color:#fff;
+    border-color:#fff;
+    border-radius:10px;
+    font-size: 1.9rem;
+  }
+  .topic-btn{
+    color:#fff;
+    border-color:#fff;
+    border-radius:10px;
+    font-size: 1.9rem;
+  }
+}

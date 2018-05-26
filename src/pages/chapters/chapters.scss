@@ -1,0 +1,44 @@
+page-chapters {
+  .chapter-card{
+    margin: 0;
+    width:100%;
+    position: relative;
+  }
+  .chapter-card img{
+    height: 180px;
+  }
+  .overlay{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(18, 96, 146, 0.5);
+    padding: 10px 5px;
+    font-size: 1.6rem;
+    color: #fff;
+  }
+  .chapter-test{
+    position: absolute;
+    top: 10px;
+    border-radius: 1px;
+    right: 10px;
+    height: 30px;
+  }
+  .topic-counter{
+    padding-top: 5px;
+  }
+  .topic-btn{
+    border-color:#fff;
+    color:#fff;
+  }
+  .home-btn{
+    background: transparent;
+    color:#fff;
+    box-shadow: none;
+    font-size: 2rem;
+    padding-left: 5px;
+    padding-right: 15px;
+  }
+  .filter-icon-holder{
+    
+  }
+}

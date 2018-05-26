@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar hideBackButton>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <button ion-button class="home-btn pull-left">
+      <ion-icon name="home" (click)="goToHome()"></ion-icon>
+    </button>
+    <div class="subject-list-label font-medium font-white pull-left margin-top-md">Chapters</div>
+  </ion-navbar>
+</ion-header>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content2 swipeBackEnabled="false"></ion-nav>
+
+<ion-content>
+
+  <ion-fab right bottom class="filter-icon-holder" (click)="goToTopicWiseFilter()">
+    <button ion-fab class="bg-blue"><ion-icon name="ios-funnel"></ion-icon></button>
+  </ion-fab>
+
+  <i class="margin-bottom-sm" *ngIf="chapterList?.length == 0">No Chapters added yet</i>
+  <ion-row>
+    <ion-col col-12 class="no-padding" *ngFor="let chapter of chapterList" class="fadein-out-border">
+      <ion-card class="chapter-card">
+          <img src="https://firebasestorage.googleapis.com/v0/b/testyou-1a6bc.appspot.com/o/chapter.jpg?alt=media&token=27304d74-ca0a-4382-b64d-8d66fa0d0ee5"/>
+            <div class="overlay">
+              <ion-row>
+                <ion-col col-8>
+              <div>{{chapter.chapterName}}</div>
+              <div class="topic-counter">{{chapter.noOfTopics}} Topic(s)</div>
+            </ion-col>
+            <ion-col col-4>
+              <button class="topic-btn" ion-button outline (click)="goToTopics(chapter)">
+                Go To Topics
+              </button>
+            </ion-col>
+            </ion-row>
+          </div>
+          <button class="chapter-test" ion-button outline (click)="gotoChapterTestMode(chapter)">
+            Take Test
+          </button>
+    </ion-card>
+  </ion-col>
+</ion-row>
+</ion-content>

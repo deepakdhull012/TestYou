@@ -1,0 +1,36 @@
+page-questions {
+  .questionHolder{
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 5px;
+    width: 100%;
+    color:white;
+  }
+  .bg-green{
+    background: green;
+  }
+  .bg-red{
+    background: red;
+  }
+  .bg-unattempted{
+    background: transparent;
+    color:#126092;
+  }
+  .questionHolder div{
+    padding-bottom: 8px;
+  }
+  .questionHolder .option{
+    margin-left: 10px;
+  }
+  .questionHolder .option img{
+    width: 20px;
+  }
+  .delete-question-btn{
+    position: fixed;
+    bottom: 5px;
+    left: 2%;
+    right: 2%;
+    width: 96%;
+  }
+}

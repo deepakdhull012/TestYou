@@ -1,0 +1,75 @@
+page-home {
+/*.subject-list-label{
+    color:#fff;
+}
+.exam-card{
+  margin:0;
+  width:100%;
+  background: #f9f9f9;
+  position: relative;
+  margin-bottom: 10px;
+}
+.exam-card img{
+  height: 170px;
+}
+.exam-name-holder{
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+}
+.subject-toggle-btn{
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  border-radius: 40px;
+}
+.subject-list{
+  list-style: none;
+  padding: 0;
+  margin:0;
+
+}
+.subject-list li{
+  background: #126092;
+  color:#fff;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  padding: 5px;
+}
+.subject-tst-btn{
+  color:#fff;
+  border-color:#fff;
+  border-radius:10px;
+}
+.subjectNameHolder{
+  text-align: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #fff;
+}
+.subject-test-btn-holder{
+  border-right: 1px solid #fff;
+}*/
+.home-menu{
+  list-style: none;
+  padding: 0;
+  margin-top: 1px;
+}
+.menu-card{
+  margin: 0;
+  width:100%;
+  position: relative;
+}
+.home-menu li ion-card .overlay{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgb(22,55,83);
+  padding: 10px 5px;
+  font-size: 2rem;
+  color: #fff;
+  text-align: center;
+}
+.home-menu li{
+  margin-bottom: 10px;
+}
+}

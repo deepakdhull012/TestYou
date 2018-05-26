@@ -1,0 +1,16 @@
+page-test-list {
+  progress {
+    text-align: center;
+      color: #126092;
+      background: #cc115d;
+      height: 30px;
+      width: 66px;
+      margin-top: 15px;
+}
+progress:after {
+  content: attr(value)'%';
+}
+.test-btn{
+  margin-top: 15px;
+}
+}

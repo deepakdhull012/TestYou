@@ -1,0 +1,205 @@
+// http://ionicframework.com/docs/theming/
+.user-info-holder{
+  margin: 0 0 1px 0;
+  width:100%;
+}
+.profile-img{
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    box-shadow: 0 0px 5px grey;
+    border: 2px solid #fff;
+}
+.menu-item{
+  border-top:1px solid #ccc;
+}
+.chapter-toggle-cb{
+  padding-right: 15px;
+  padding-top: 10px;
+}
+.chapter-toggle{
+  margin:10px 0 0 15px;
+  width:100%;
+}
+.topic-list-ham{
+  list-style: none;
+  padding-left: 0;
+  border-bottom: 1px solid #ccc;
+  margin:5px 0 0 0;
+
+}
+.topic-cb-holder .item-inner{
+  border:none !important;
+}
+.clear-filter{
+  padding: 13px 10px;
+}
+.chapter-name-holder-ham{
+    overflow: hidden;
+    width: 90%;
+    text-overflow: ellipsis;
+}
+.apply-filter-btn{
+    box-shadow: none;
+    border: 1px solid;
+    background: #126092;
+}
+.difficulty-filter{
+  border-bottom:1px solid #ccc;
+}
+.difficulty-filter .item-inner{
+  border-bottom: none;
+}
+.lpd0{
+  padding-left: 0;
+}
+
+
+
+@font-face {
+    font-family: 'Lato-Light';
+    src: url('../fonts/Lato-Light.eot') format('embedded-opentype'), url('../fonts/Lato-Light.woff') format('woff'), url('../fonts/Lato-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Open Sans", sans-serif;
+    src: url('../fonts/OpenSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+.content{
+  background: #fff;
+  color:#126092;
+}
+.font-white{
+  color: #fff;
+}
+.font-black{
+  color:#333;
+}
+.font-blue{
+  color:#126092;
+}
+.bg-white{
+  background: #fff;
+}
+.bg-blue{
+  background:#126092;
+}
+.bg-grey{
+  background: #ccc;
+}
+.toolbar-background{
+  background: #126092;
+  color:#fff;
+}
+.toolbar-title{
+  color:#fff;
+}
+.bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default{
+  color:#fff;
+}
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color:#126092;
+  //126092,424242
+}
+div,input,p,span,label {
+    font-family: 'Open Sans' !important;
+}
+.font-medium{
+  font-size: 2rem;
+}
+
+.padding-top-sm{padding-top: 5px;}
+.padding-top-md{padding-top: 10px;}
+.padding-right-sm{padding-right: 5px;}
+.padding-right-md{padding-right: 10px;}
+.padding-bottom-sm{padding-bottom : 5px;}
+.padding-bottom-md{padding-bottom: 10px;}
+.padding-bottom-zero{padding-bottom: 0 !important;}
+.padding-left-sm{padding-left: 5px;}
+.padding-left-md{padding-left: 10px;}
+
+.margin-top-sm{margin-top: 5px;}
+.margin-top-md{margin-top: 10px;}
+.margin-right-sm{margin-right: 5px;}
+.margin-right-md{margin-right: 10px;}
+.margin-bottom-sm{margin-bottom: 5px;}
+.margin-bottom-md{margin-bottom: 10px;}
+.margin-bottom-zero{margin-bottom: 0 !important;}
+.margin-left-sm{margin-left: 5px;}
+.margin-left-md{margin-left: 10px;}
+
+.left{text-align: left;}
+.right{text-align: right;}
+.center{text-align: center;}
+.pull-right{
+  float: right;
+}
+.pull-left{
+  float: left;
+}
+.clearfix{
+  clear:both;
+}
+.button-outline-md{
+  border-color: #126092;
+    color: #126092;
+    background-color: transparent;
+    text-transform: capitalize;
+}
+a{text-decoration: underline;color:#126092;}
+.no-margin{
+  margin:0;
+}
+.no-padding{
+  padding: 0;
+}
+
+.list .item{
+  margin-bottom: 10px;
+
+}
+.list .item input{
+
+  padding: 10px;
+  border: none;
+  background: transparent;
+  color: #126092;
+  margin-left: 30px;
+
+}
+.full-width{
+  width:100%;
+}
+.red{color:#f00;}
+.error{
+  border:1px solid #f00;
+  padding: 5px;
+  margin:0 5px 5px 10px;
+  width:100%;
+}
+
+
+@media only screen
+   and (min-device-width : 768px)
+   and (max-device-width : 1024px) {
+
+}
+
+/* iPads (landscape) ----------- */
+   @media only screen
+   and (min-device-width : 768px)
+   and (max-device-width : 1024px)
+   and (orientation : landscape) {
+   /* Styles */
+}
+
+/* iPads (portrait) ----------- */
+   @media only screen
+   and (min-device-width : 768px)
+   and (max-device-width : 1024px)
+   and (orientation : portrait) {
+   /* Styles */
+}

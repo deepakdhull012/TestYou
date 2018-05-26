@@ -1,0 +1,118 @@
+page-chat {
+  .user_name {
+        color: #afafaf;
+    }
+    .message {
+        padding: 10px !important;
+        transition: all 250ms ease-in-out !important;
+        margin-top: 10px;
+        margin-right: 10px;
+        margin-left: 10px;
+        position: relative;
+        max-width: 80%;
+        font-size: 1.5rem;
+        border: 1px solid #ccc;
+    }
+    .my_message {
+        background: #dcf8c6;
+        color: #262626;
+        float:right;
+        border-radius: 10px 0 10px 10px;
+        border: 1px solid #dae8ce;
+
+    }
+    .other_message {
+      background: #fff;
+      color: #262626;
+      float:left;
+      border-radius: 0 10px 10px 10px;
+    }
+    .time {
+        color: #afafaf;
+        float: right;
+        font-size: small;
+        padding-left: 10px;
+    }
+    .tail-container{
+      content: '';
+      position: absolute;
+      top: 0px;
+      width: 12px;
+      height: 19px;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+    .other_message .tail-container{
+
+      left:-12px;
+      background-image: url('../../assets/icon/arrow.png')
+    }
+    .my_message .tail-container{
+      right:-12px;
+      background-image: url('../../assets/icon/arrow_other.png')
+    }
+    .message_row {
+        background-color: transparent;
+    }
+    .chatbg{
+      background: #efefef;
+    }
+    .send-btn-holder{
+      font-size: 2rem;
+    color: #fff;
+    background: #1e6b32;
+    border-radius: 74px;
+    width: 50px;
+    height: 50px;
+    float: right;
+    }
+    .header-md::after, .tabs-md[tabsPlacement="top"] > .tabbar::after, .footer-md::before, .tabs-md[tabsPlacement="bottom"] > .tabbar::before{
+      background-image: none;
+    }
+    .text-msg-holder{
+      margin-top: 7px;
+    border: 1px solid #ccc;
+    outline: none;
+    border-radius: 28px;
+    }
+    .online-dot{
+      width: 10px;
+    height: 10px;
+
+    float: right;
+    border-radius: 50%;
+    margin-top: 7px;
+    }
+    .online-dot.red{
+      background: red;
+    }
+    .online-dot.green{
+      background: green;
+    }
+    .typingText{
+      text-align: center;
+    color: #3a863d;
+    font-size: 2rem;
+    }
+    .typing-img{
+      float: left;
+      width: 30px;
+      height: 15px;
+    }
+    .input-has-focus,.item-input-has-focus{
+      outline:none !important;
+    }
+    .toolbar-title{
+      padding: 0 !important;
+    }
+    .chatter-name-holder{
+      padding-top: 6px;
+    }
+    .sound-label{
+      padding: 7px 0 0 7px;
+    }
+    .deliver-check{
+      color:#126092;
+    }
+}
